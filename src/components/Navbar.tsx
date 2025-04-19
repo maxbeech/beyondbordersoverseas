@@ -39,42 +39,6 @@ const Navbar = () => {
   // Navigation structure with dropdown menus
   const navigation = [
     { name: 'Home', href: '/' },
-    {
-      name: 'About Us',
-      href: '/about',
-      children: [
-        { name: 'Our Story', href: '/about' },
-        { name: 'Our Team', href: '/about/team' },
-        { name: 'Facilities', href: '/about/facilities' },
-        { name: 'Values & Mission', href: '/about/values' },
-        { name: 'Ofsted', href: '/about/ofsted' },
-      ],
-    },
-    {
-      name: 'Programs & Services', 
-      href: '/programs',
-      children: [
-        { name: 'Holiday Club', href: '/programs/holiday-club' },
-        { name: 'After School Club', href: '/programs/after-school' },
-        { name: 'Breakfast Club', href: '/programs/breakfast' },
-        { name: 'Preschool', href: '/programs/preschool' },
-        { name: 'Wraparound Care', href: '/programs/wraparound' },
-      ],
-    },
-    {
-      name: 'Parents',
-      href: '/parents',
-      children: [
-        { name: 'Admissions', href: '/parents/admissions' },
-        { name: 'Fees', href: '/parents/fees' },
-        { name: 'FAQs', href: '/parents/faqs' },
-        { name: 'Policies', href: '/parents/policies' },
-        { name: 'Term Dates', href: '/parents/term-dates' },
-      ],
-    },
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'News', href: '/news' },
-    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -120,80 +84,24 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex lg:items-center lg:space-x-2">
             {navigation.map((item) => (
-              !item.children ? (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`px-3 py-3 text-sm font-medium rounded-md transition-all duration-300 hover:scale-105 ${
-                    pathname === item.href
-                      ? isScrolled
-                        ? 'text-emerald-700 bg-emerald-50'
-                        : 'text-white bg-white/10 backdrop-blur-sm'
-                      : isScrolled
-                        ? 'text-gray-700 hover:text-emerald-700'
-                        : 'text-white hover:bg-white/10'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ) : (
-                <Popover key={item.name} className="relative">
-                  {({ open }) => (
-                    <>
-                      <Popover.Button
-                        className={`group inline-flex items-center px-3 py-3 text-sm font-medium rounded-md outline-none transition-all duration-300 hover:scale-105 ${
-                          pathname?.startsWith(item.href)
-                            ? isScrolled
-                              ? 'text-emerald-700 bg-emerald-50'
-                              : 'text-white bg-white/10 backdrop-blur-sm'
-                            : isScrolled
-                              ? 'text-gray-700 hover:text-emerald-700'
-                              : 'text-white hover:bg-white/10'
-                        }`}
-                      >
-                        <span>{item.name}</span>
-                        <ChevronDownIcon
-                          className={`ml-1 h-4 w-4 transform transition-transform duration-200 ${
-                            open ? 'rotate-180' : ''
-                          } ${
-                            isScrolled ? 'text-emerald-700' : 'text-white'
-                          }`}
-                          aria-hidden="true"
-                        />
-                      </Popover.Button>
-
-                      <Transition
-                        as={Fragment}
-                        enter="transition ease-out duration-200"
-                        enterFrom="opacity-0 translate-y-1"
-                        enterTo="opacity-100 translate-y-0"
-                        leave="transition ease-in duration-150"
-                        leaveFrom="opacity-100 translate-y-0"
-                        leaveTo="opacity-0 translate-y-1"
-                      >
-                        <Popover.Panel className="absolute z-10 mt-2 w-56 transform px-2 sm:px-0">
-                          <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                            <div className="relative grid gap-1 bg-white p-2">
-                              {item.children.map((subItem) => (
-                                <Link
-                                  key={subItem.name}
-                                  href={subItem.href}
-                                  className="flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors"
-                                >
-                                  {subItem.name}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        </Popover.Panel>
-                      </Transition>
-                    </>
-                  )}
-                </Popover>
-              )
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`px-3 py-3 text-sm font-medium rounded-md transition-all duration-300 hover:scale-105 ${
+                  pathname === item.href
+                    ? isScrolled
+                      ? 'text-emerald-700 bg-emerald-50'
+                      : 'text-white bg-white/10 backdrop-blur-sm'
+                    : isScrolled
+                      ? 'text-gray-700 hover:text-emerald-700'
+                      : 'text-white hover:bg-white/10'
+                }`}
+              >
+                {item.name}
+              </Link>
             ))}
             <Link
-              href="/contact"
+              href="/"
               className="ml-2 inline-flex items-center px-4 py-3 border border-transparent text-sm font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 transition-all duration-300 hover:scale-105"
             >
               Book a Tour
@@ -249,57 +157,79 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden mobile-menu-container bg-white shadow-lg"
+            className="fixed inset-0 z-40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 divide-y divide-gray-100">
-              {navigation.map((item) => (
-                <div key={item.name} className="py-2">
-                  {!item.children ? (
-                    <Link
-                      href={item.href}
-                      className={`block px-3 py-2 rounded-md text-base font-medium ${
-                        pathname === item.href
-                          ? 'text-emerald-700 bg-emerald-50'
-                          : 'text-gray-900 hover:text-emerald-700 hover:bg-gray-50'
-                      }`}
-                      onClick={() => setIsMobileMenuOpen(false)}
+            <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
+            <div className="fixed inset-y-0 right-0 max-w-sm w-full bg-white shadow-xl mobile-menu-container">
+              <motion.div
+                className="h-full p-6 overflow-y-scroll"
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+              >
+                <div className="flex items-center justify-between mb-8">
+                  <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Image
+                      src="/media/logo-icon_only.png"
+                      alt="Bisley Base Logo"
+                      width={40}
+                      height={40}
+                      className="w-10 h-10"
+                    />
+                    <span className="text-lg font-bold text-emerald-700">Bisley Base</span>
+                  </Link>
+                  <button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 text-gray-500 hover:text-gray-700"
+                  >
+                    <svg
+                      className="h-6 w-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
                     >
-                      {item.name}
-                    </Link>
-                  ) : (
-                    <div className="space-y-1">
-                      <p className="px-3 py-2 text-base font-medium text-gray-900">
-                        {item.name}
-                      </p>
-                      <div className="pl-4 space-y-1 border-l-2 border-gray-100">
-                        {item.children.map((subItem) => (
-                          <Link
-                            key={subItem.name}
-                            href={subItem.href}
-                            className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-emerald-700 hover:bg-gray-50"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {subItem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
                 </div>
-              ))}
-              <div className="pt-4">
-                <Link
-                  href="/contact"
-                  className="w-full block text-center px-4 py-2 rounded-md text-base font-medium text-white bg-emerald-600 hover:bg-emerald-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Book a Tour
-                </Link>
-              </div>
+                <div className="space-y-3">
+                  {navigation.map((item) => (
+                    <div key={item.name}>
+                      <Link
+                        href={item.href}
+                        className={`block px-3 py-2 rounded-md text-base font-medium ${
+                          pathname === item.href
+                            ? 'text-emerald-700 bg-emerald-50'
+                            : 'text-gray-700 hover:bg-gray-50 hover:text-emerald-700'
+                        }`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+                <div className="pt-4">
+                  <Link
+                    href="/"
+                    className="w-full block text-center px-4 py-2 rounded-md text-base font-medium text-white bg-emerald-600 hover:bg-emerald-700"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Book a Tour
+                  </Link>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         )}

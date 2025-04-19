@@ -33,7 +33,7 @@ export default function Footer() {
   });
 
   return (
-    <footer className="bg-[#1F4091] text-white">
+    <footer className="bg-white text-gray-800">
       <div className="container mx-auto px-4">
         {/* Main footer content */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -51,7 +51,7 @@ export default function Footer() {
               height={50}
               className="mb-6"
             />
-            <p className="text-white mb-4">
+            <p className="text-gray-700 mb-4">
               Beyond Borders Overseas empowers students worldwide to secure placements at over 800 universities across 30+ countries, offering end-to-end support from test prep to visa processing.
             </p>
             <div className="flex space-x-4 mt-6">
@@ -59,37 +59,37 @@ export default function Footer() {
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white/20 hover:bg-white/30 transition-colors p-2 rounded-full"
+                className="bg-[#1F4091]/10 hover:bg-[#1F4091]/20 transition-colors p-2 rounded-full"
                 aria-label="Facebook"
               >
-                <FaFacebookF className="h-4 w-4" />
+                <FaFacebookF className="h-4 w-4 text-[#1F4091]" />
               </a>
               <a 
                 href="https://instagram.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white/20 hover:bg-white/30 transition-colors p-2 rounded-full"
+                className="bg-[#1F4091]/10 hover:bg-[#1F4091]/20 transition-colors p-2 rounded-full"
                 aria-label="Instagram"
               >
-                <FaInstagram className="h-4 w-4" />
+                <FaInstagram className="h-4 w-4 text-[#1F4091]" />
               </a>
               <a 
                 href="https://twitter.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white/20 hover:bg-white/30 transition-colors p-2 rounded-full"
+                className="bg-[#1F4091]/10 hover:bg-[#1F4091]/20 transition-colors p-2 rounded-full"
                 aria-label="Twitter"
               >
-                <FaTwitter className="h-4 w-4" />
+                <FaTwitter className="h-4 w-4 text-[#1F4091]" />
               </a>
               <a 
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white/20 hover:bg-white/30 transition-colors p-2 rounded-full"
+                className="bg-[#1F4091]/10 hover:bg-[#1F4091]/20 transition-colors p-2 rounded-full"
                 aria-label="LinkedIn"
               >
-                <FaLinkedinIn className="h-4 w-4" />
+                <FaLinkedinIn className="h-4 w-4 text-[#1F4091]" />
               </a>
             </div>
           </motion.div>
@@ -104,32 +104,32 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-6 text-[#F09022] border-b-2 border-[#F09022] pb-2 inline-block">Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/services/test-preparation" className="text-white hover:text-[#69AFFD] transition-colors">
+                <Link href="/services/test-preparation" className="text-gray-700 hover:text-[#1F4091] transition-colors">
                   Test Preparation
                 </Link>
               </li>
               <li>
-                <Link href="/services/university-shortlisting" className="text-white hover:text-[#69AFFD] transition-colors">
+                <Link href="/services/university-shortlisting" className="text-gray-700 hover:text-[#1F4091] transition-colors">
                   University Shortlisting
                 </Link>
               </li>
               <li>
-                <Link href="/services/loans-finance" className="text-white hover:text-[#69AFFD] transition-colors">
+                <Link href="/services/loans-finance" className="text-gray-700 hover:text-[#1F4091] transition-colors">
                   Loans & Finance
                 </Link>
               </li>
               <li>
-                <Link href="/services/visa-support" className="text-white hover:text-[#69AFFD] transition-colors">
+                <Link href="/services/visa-support" className="text-gray-700 hover:text-[#1F4091] transition-colors">
                   Visa Support
                 </Link>
               </li>
               <li>
-                <Link href="/application-process" className="text-white hover:text-[#69AFFD] transition-colors">
+                <Link href="/application-process" className="text-gray-700 hover:text-[#1F4091] transition-colors">
                   Applications
                 </Link>
               </li>
               <li>
-                <Link href="/universities" className="text-white hover:text-[#69AFFD] transition-colors">
+                <Link href="/universities" className="text-gray-700 hover:text-[#1F4091] transition-colors">
                   Partner Universities
                 </Link>
               </li>
@@ -146,32 +146,32 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-6 text-[#F09022] border-b-2 border-[#F09022] pb-2 inline-block">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-white hover:text-[#69AFFD] transition-colors">
+                <Link href="/about" className="text-gray-700 hover:text-[#1F4091] transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/success-stories" className="text-white hover:text-[#69AFFD] transition-colors">
+                <Link href="/success-stories" className="text-gray-700 hover:text-[#1F4091] transition-colors">
                   Success Stories
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-white hover:text-[#69AFFD] transition-colors">
+                <Link href="/blog" className="text-gray-700 hover:text-[#1F4091] transition-colors">
                   Resources
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-white hover:text-[#69AFFD] transition-colors">
+                <Link href="/contact" className="text-gray-700 hover:text-[#1F4091] transition-colors">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/privacy-policy" className="text-white hover:text-[#69AFFD] transition-colors">
+                <Link href="/privacy-policy" className="text-gray-700 hover:text-[#1F4091] transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/sitemap" className="text-white hover:text-[#69AFFD] transition-colors">
+                <Link href="/sitemap" className="text-gray-700 hover:text-[#1F4091] transition-colors">
                   Sitemap
                 </Link>
               </li>
@@ -188,28 +188,28 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-6 text-[#F09022] border-b-2 border-[#F09022] pb-2 inline-block">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <FaMapMarkerAlt className="h-5 w-5 text-[#69AFFD] mr-3 mt-1" />
-                <span className="text-white">
+                <FaMapMarkerAlt className="h-5 w-5 text-[#1F4091] mr-3 mt-1" />
+                <span className="text-gray-700">
                   123 Global Education Tower<br />
                   New Delhi, India<br />
                   110001
                 </span>
               </li>
               <li className="flex items-center">
-                <FaPhoneAlt className="h-4 w-4 text-[#69AFFD] mr-3" />
-                <a href="tel:+919876543210" className="text-white hover:text-[#69AFFD] transition-colors">
+                <FaPhoneAlt className="h-4 w-4 text-[#1F4091] mr-3" />
+                <a href="tel:+919876543210" className="text-gray-700 hover:text-[#1F4091] transition-colors">
                   +91 987-654-3210
                 </a>
               </li>
               <li className="flex items-center">
-                <FaEnvelope className="h-4 w-4 text-[#69AFFD] mr-3" />
-                <a href="mailto:info@beyondbordersoverseas.com" className="text-white hover:text-[#69AFFD] transition-colors">
+                <FaEnvelope className="h-4 w-4 text-[#1F4091] mr-3" />
+                <a href="mailto:info@beyondbordersoverseas.com" className="text-gray-700 hover:text-[#1F4091] transition-colors">
                   info@beyondbordersoverseas.com
                 </a>
               </li>
               <li className="flex items-center">
-                <FaGlobe className="h-4 w-4 text-[#69AFFD] mr-3" />
-                <span className="text-white">Serving students from 50+ countries</span>
+                <FaGlobe className="h-4 w-4 text-[#1F4091] mr-3" />
+                <span className="text-gray-700">Serving students from 50+ countries</span>
               </li>
             </ul>
             <div className="mt-6">
@@ -224,13 +224,13 @@ export default function Footer() {
         </div>
         
         {/* Bottom bar */}
-        <div className="py-6 border-t border-white/20 text-sm">
+        <div className="py-6 border-t border-gray-200 text-sm">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-white">© {currentYear} Beyond Borders Overseas. All rights reserved.</p>
+            <p className="text-gray-700">© {currentYear} Beyond Borders Overseas. All rights reserved.</p>
             <div className="flex mt-4 md:mt-0 space-x-4">
-              <Link href="/terms" className="text-white hover:text-[#69AFFD] transition-colors">Terms & Conditions</Link>
-              <Link href="/privacy-policy" className="text-white hover:text-[#69AFFD] transition-colors">Privacy Policy</Link>
-              <Link href="/sitemap" className="text-white hover:text-[#69AFFD] transition-colors">Sitemap</Link>
+              <Link href="/terms" className="text-gray-700 hover:text-[#1F4091] transition-colors">Terms & Conditions</Link>
+              <Link href="/privacy-policy" className="text-gray-700 hover:text-[#1F4091] transition-colors">Privacy Policy</Link>
+              <Link href="/sitemap" className="text-gray-700 hover:text-[#1F4091] transition-colors">Sitemap</Link>
             </div>
           </div>
         </div>

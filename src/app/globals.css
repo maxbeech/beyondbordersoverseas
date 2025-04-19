@@ -7,12 +7,14 @@
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
   
-  /* Bisley Base Theme Colors */
-  --primary: #059669; /* emerald-600 */
-  --primary-light: #10b981; /* emerald-500 */
-  --primary-dark: #047857; /* emerald-700 */
-  --accent: #fbbf24; /* amber-400 */
-  --accent-dark: #f59e0b; /* amber-500 */
+  /* Beyond Borders Overseas Theme Colors */
+  --primary: #0c3b6c; /* deep blue */
+  --primary-light: #1e4e85;
+  --primary-dark: #092a4f;
+  --secondary: #004d99;
+  --accent: #ff6b35; /* vibrant orange accent */
+  --accent-light: #ff8c5a;
+  --accent-dark: #e74e1b;
 }
 
 @media (prefers-color-scheme: dark) {
